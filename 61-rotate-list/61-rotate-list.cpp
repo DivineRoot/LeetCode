@@ -14,14 +14,14 @@ public:
         // edge cases
         if(!head || !head->next || k == 0)  return head;
         
-        // Compute the length
+        // compute the length
         ListNode *curr = head;
         int len = 1;
         while( curr->next && ++len){
             curr = curr -> next;
         }
         
-        //go till that node;
+        // go till that node;
         curr -> next = head;
         k = k % len;                        // gives us closest multiple of len
         k = len - k;                        // we san subtract that from len to get our desired end-place.
