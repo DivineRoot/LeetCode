@@ -1,18 +1,23 @@
 class Solution {
    private:
-      void findSubsets(int ind, vector<int> &nums, vector<int> &ds, vector < vector < int >> & ans) {
+      void findSubsets(int ind, vector<int> &nums, vector<int> &ds, vector<vector<int>> &ans) {
          ans.push_back(ds);
          for (int i = ind; i < nums.size(); i++) {
+             
+            // If it isn't the 1st element && is a duplicate --> Skip
             if (i != ind && nums[i] == nums[i - 1]) continue;
+            
+            // Else push the element in the DS.
             ds.push_back(nums[i]);
             findSubsets(i + 1, nums, ds, ans);
             ds.pop_back();
          }
       }
    public:
-      vector < vector < int >> subsetsWithDup(vector < int > & nums) {
-         vector < vector < int >> ans;
-         vector < int > ds;
+      vector <vector<int>> subsetsWithDup(vector<int> &nums) {
+         vector <vector<int>> ans;
+         vector <int> ds;
+          
          sort(nums.begin(), nums.end());
          findSubsets(0, nums, ds, ans);
          return ans;
