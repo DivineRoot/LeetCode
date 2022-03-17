@@ -11,7 +11,7 @@
     1 1 0       [1,2]       - Choose first and second last
     1 1 1       [1,2,3]     - Choose all
 */
-
+/*
 class Solution {
 public:
     vector<vector<int>> subsets(vector<int>& nums) {
@@ -31,7 +31,7 @@ public:
     }
 };
 
-/*
+*/
 
 //2. Recursive Solution
 class Solution {
@@ -59,4 +59,3 @@ public:
         return ans;
     }
 };
-*/
