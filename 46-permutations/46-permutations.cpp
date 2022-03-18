@@ -1,3 +1,30 @@
+/*        Recursion without extra DS i.e, saving space complexity  
+TC: n!*n  - For generating n! perms & 'n' length loop 
+SC: O(n)+O(n!)  - For the recursion depth & 'n!' for returning the ans */
+
+class Solution {
+public:
+    void helper(int index, vector<int> &nums, vector<vector<int>> &ans){
+        if(index == nums.size()){
+            ans.push_back(nums);
+            return;
+        }
+        for(int i=index; i<nums.size(); i++){
+            swap(nums[index], nums[i]);
+            helper(index+1, nums, ans);
+            swap(nums[index], nums[i]);         // Restoring the previous array
+        }
+    }
+    
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<vector<int>> ans;
+        helper(0, nums, ans);
+        return ans;
+    }
+};
+
+/*      Recursion with extra DS i.e, increased space complexity
+
 class Solution {
 public:
     void helper (vector<int> &arr, vector<vector<int>> &ans, vector<int> &ds, int freq[]){
@@ -29,3 +56,4 @@ public:
         return ans;
     }
 };
+*/
