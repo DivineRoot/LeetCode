@@ -1,10 +1,10 @@
-class MyStack {
-public:
-    queue<int> Q1;
+class MyStack {                                   //                | 5 |  | 5 |<-- Top of 'STACK'
+public:                                           //                | 3 |  | 3 |
+    queue<int> Q1;                                // front of Que-->| 2 |  | 2 |
     
-    void push(int x) {
-        Q1.push(x);
-        for(int i=0; i<Q1.size()-1; i++){
+    void push(int x) {                                      // For val: 2 -> 3 -> 5
+        Q1.push(x);                                         // [ 2 ] -> [ 2 3 ] -> [ 2 3 5 ]
+        for(int i=0; i<Q1.size()-1; i++){                   // [ 2 ] -> [ 3 2 ] -> [ 5 3 2 ] --> stack 
             Q1.push(Q1.front());
             Q1.pop();
         }
@@ -21,7 +21,7 @@ public:
     }
     
     bool empty() {
-        return Q1.empty();
+        return Q1.empty();              // return Q1.size() == 0;
     }
 };
 
