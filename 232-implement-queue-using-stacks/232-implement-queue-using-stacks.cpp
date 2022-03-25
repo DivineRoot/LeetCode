@@ -15,7 +15,7 @@ public:
     int pop() {
         // shift input to output 
         if (output.empty())
-            while (input.size())         // OR while (input.size())
+            while (input.size())
                 output.push(input.top()), input.pop();
 
         int x = output.top();
