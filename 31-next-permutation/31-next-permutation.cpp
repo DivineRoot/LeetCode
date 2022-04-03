@@ -5,7 +5,7 @@ public:
         
         // Break point can be atmax at the 2nd-last index
         //  traverse from (n-2) --> 0.      
-        for( k = n - 2; k >= 0; k--){
+        for(k = n - 2; k >= 0; k--){
                 if(nums[k] < nums[k+1])
                     break;
         }
